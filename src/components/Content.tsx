@@ -1,15 +1,8 @@
-function Content() {
-    return (
-        <div className="content">
-            <ol>
-                <li>About Me</li>
-                <li>Projects</li>
-                <li>Technologies</li>
-                <li>Formal Resume</li>
-                <li>Get in Touch</li>
-            </ol>
-        </div>
-    );
-}
+import styled from 'styled-components';
 
-export default Content;
+export const Content = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+`

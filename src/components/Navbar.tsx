@@ -1,6 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
 import { StyledLink } from './StyledLink';
-import Content from './Content';
 import Technologies from '../pages/Technologies';
 import './Navbar.css';
 
@@ -23,7 +22,6 @@ function Navbar() {
             </button>
         </nav>
         <Routes>
-            <Route path="/" element={<Content />}/>
             <Route path="/technical-skills" element={<Technologies />}/>
         </Routes>
         </>
