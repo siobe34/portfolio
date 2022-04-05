@@ -1,0 +1,22 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar-menu {
+    display: flex;
+    list-style-type: none;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-inline-start: 0;
+    gap: 2rem;
+}
+.navbar-menu > li > a {
+    text-decoration: none;
+    color: inherit;
+}
+.navbar-menu > li > a:hover {
+    border-bottom: .2rem solid black;
+}
