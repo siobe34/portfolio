@@ -13,10 +13,3 @@
     padding-inline-start: 0;
     gap: 2rem;
 }
-.navbar-menu > li > a {
-    text-decoration: none;
-    color: inherit;
-}
-.navbar-menu > li > a:hover {
-    border-bottom: .2rem solid black;
-}

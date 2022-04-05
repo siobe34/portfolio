@@ -1,18 +1,20 @@
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import { StyledLink } from './StyledLink';
 import Content from './Content';
+import Technologies from '../pages/Technologies';
 import './Navbar.css';
 
 function Navbar() {
     return (
         <>
         <nav className="navbar">
-            <Link to="#">HOME</Link>
+            <StyledLink to="/">HOME</StyledLink>
             <ul className="navbar-menu">
-                <li><Link to="#">About Me</Link></li>
-                <li><Link to="#">Projects</Link></li>
-                <li><Link to="#">Technologies</Link></li>
-                <li><Link to="#">Formal Resume</Link></li>
-                <li><Link to="#">Get in Touch</Link></li>
+                <li><StyledLink to="#">About Me</StyledLink></li>
+                <li><StyledLink to="#">Projects</StyledLink></li>
+                <li><StyledLink to="/technical-skills">Technical Skills/Technologies</StyledLink></li>
+                <li><StyledLink to="#">Formal Resume</StyledLink></li>
+                <li><StyledLink to="#">Get in Touch</StyledLink></li>
             </ul>
             <button
                 onClick={() => console.log('mobile menu')}
@@ -21,10 +23,8 @@ function Navbar() {
             </button>
         </nav>
         <Routes>
-            <Route
-                path="/"
-                element={<Content />}
-            />
+            <Route path="/" element={<Content />}/>
+            <Route path="/technical-skills" element={<Technologies />}/>
         </Routes>
         </>
     );
