@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
-type HeaderProps = {
+type PropTypes = {
     className?: string;
     children: React.ReactNode;
     headerType: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 
-const UnstyledHeader = ({ className, children, headerType }: HeaderProps) => {
+const UnstyledHeader = ({ className, children, headerType }: PropTypes) => {
     if (headerType === 'h2') return (<h2 className={className}>{children}</h2>);
     if (headerType === 'h3') return (<h3 className={className}>{children}</h3>);
     if (headerType === 'h4') return (<h4 className={className}>{children}</h4>);
