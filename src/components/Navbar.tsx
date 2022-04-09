@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { StyledLink } from './StyledLink';
 import { Button } from './Button';
+import PageNotFound from '../pages/PageNotFound';
 import About from '../pages/About';
 import Projects from '../pages/Projects';
 import Technologies from '../pages/Technologies';
@@ -46,6 +47,7 @@ function UnstyledNavbar({ className }: PropTypes) {
             <Route path="/projects" element={<Projects />}/>
             <Route path="/technical-skills" element={<Technologies />}/>
             <Route path="/resume" element={<Resume />}/>
+            <Route path="*" element={<PageNotFound />}/>
         </Routes>
         </>
     );
