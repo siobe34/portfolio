@@ -18,12 +18,12 @@ const UnstyledGrid = ({ className, children}: PropTypes) => {
 
 export const Grid = styled(UnstyledGrid)`
     display: flex;
-    justify-content: ${props => props.justifyContent ? props.justifyContent : 'center'};
-    flex-wrap: ${props => props.flexWrap ? props.flexWrap : 'wrap'};
-    gap: ${props => props.gap ? props.gap : '1rem'};
-    width: ${props => props.width ? props.width : '100%'};
+    justify-content: ${props => props.justifyContent ?? 'center'};
+    flex-wrap: ${props => props.flexWrap ?? 'wrap'};
+    gap: ${props => props.gap ?? '1rem'};
+    width: ${props => props.width ?? '100%'};
     
     & > * {
-        flex: ${props => props.childFlex ? props.childFlex : '1 0 20vw'};
+        flex: ${props => props.childFlex ?? '1 0 max(20vw, 720px/3)'};
     }
 `

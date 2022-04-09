@@ -6,6 +6,6 @@ export const StyledLink = styled(Link)`
     text-decoration: none;
     
     &:hover {
-        border-bottom: 2px solid var(--txt-primary);
+        border-bottom: .2rem solid var(--bg-primary-txt);
     }
 `

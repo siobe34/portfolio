@@ -13,11 +13,13 @@ import jquery from '../assets/jquery.svg';
 import mariadb from '../assets/mariadb.svg';
 import mongodb from '../assets/mongodb.svg';
 import mysql from '../assets/mysql.svg';
+import nginx from '../assets/nginx.svg';
 import nodejs from '../assets/nodejs.svg';
 import pandas from '../assets/pandas.svg';
 import portainer from '../assets/portainer.svg';
 import postman from '../assets/postman.svg';
 import powerBI from '../assets/powerbi.svg';
+import projectmanagement from '../assets/projectmanagement.svg';
 import proxmox from '../assets/proxmox.png';
 import python from '../assets/python.svg'
 import react from '../assets/react.svg';
@@ -40,18 +42,20 @@ const Logos = {
     express,
     flask,
     github,
-    googlemaps,
+        googlemaps,
     HTML,
     javascript,
     jquery,
     mariadb,
     mongodb,
     mysql,
+    nginx,
     nodejs,
     pandas,
     portainer,
     postman,
     powerBI,
+    projectmanagement,
     proxmox,
     python,
     react,

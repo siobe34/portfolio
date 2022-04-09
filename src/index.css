@@ -5,13 +5,14 @@
     --dark-txt: #fff;
     --light-primary: #b58df9;
     --light-secondary: #8cd8f0;
-    --dark-primary: #b58df9;
+    --dark-primary: #630FF5;
     --dark-secondary: #8cd8f0;
 }
 .light {
     --bg-colour: var(--light-bg);
     --bg-primary: var(--primary);
-    --bg-primary-txt: var(--dark-txt);
+    /* --bg-primary-txt: var(--dark-txt); */
+    --bg-primary-txt: #14141;
     --txt-primary: var(--light-txt);
     --txt-secondary: var(--dark-txt);
     --primary: var(--light-primary);
@@ -48,12 +49,13 @@ body {
 main {
     margin: 0;
     display: grid;
-    grid-template-rows: max(30px, 5vh) 92vh 3vh;
+    grid-template-rows: max(30px, 5vh) 90vh max(30px, 3vh);
     grid-template-columns: 1fr;
     grid-template-areas:
     'navbar'
     'content'
     'footer';
+    gap: 1vh;
     color: var(--txt-primary);
     background-color: var(--bg-colour);
     font-family: 'Courier New', Courier, monospace;

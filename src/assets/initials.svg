@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg version="1.1"
+    width="256px" height="256px"
+    viewBox="0 0 256 256"
+    xmlns="http://www.w3.org/2000/svg">
+    <!-- <g>
+        <path
+            fill="transparent"
+            stroke='white'
+            stroke-width="50"
+            d='M 25 256 L25 50 M 125 256 L125 30 C 256 25 256 115 150 148 M 256 256 L 85 100'
+        />
+        <rect
+            fill="white"
+            x="0"
+            y="0"
+            width="35.3553390593"
+            height="35.3553390593"
+            transform="rotate(45) translate(0 0)"/>
+    </g> -->
+    <g>
+        <path
+            fill="transparent"
+            stroke='white'
+            stroke-width="50"
+            d='M 25 256 L25 25 M 125 256 L125 30 C 256 25 256 115 150 148 M 256 256 L 85 100'
+        />
+        <rect
+            fill="white"
+            x="17.6776695296"
+            y="-17.6776695296"
+            width="35.3553390593"
+            height="35.3553390593"
+            transform="rotate(45) translate(0 0)"/>
+    </g>
+</svg>

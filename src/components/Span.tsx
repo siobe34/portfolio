@@ -19,15 +19,15 @@ type PropTypes = {
     backgroundColor?: string;
 }
 
-const UnstyledContainer = ({ className, children }: PropTypes) => {
+const UnstyledSpan = ({ className, children }: PropTypes) => {
     return (
-        <div className={className}>
+        <span className={className}>
             {children}
-        </div>
+        </span>
     )
 }
 
-export const Container = styled(UnstyledContainer)`
+export const Span = styled(UnstyledSpan)`
     display: flex;
     flex-wrap: ${props => props.flexWrap ?? 'nowrap'};
     flex-direction: ${props => props.flexDirection ?? 'row'};

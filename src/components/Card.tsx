@@ -1,3 +1,6 @@
+import { useContext } from 'react';
+import ThemeContext from './ThemeContext';
+
 import styled from 'styled-components';
 
 type PropTypes = {
@@ -5,18 +8,26 @@ type PropTypes = {
     className?: string;
     image?: string;
     imageSize?: {x:string, y:string};
+    imageStyle?: React.CSSProperties;
+    darkMode?: boolean;
     flexDirection?: string;
     justifyContent?: string;
     alignItems?: string;
+    gap?: string;
     margin?: string;
     padding?: string;
+    width?: string;
+    height?: string;
     overflow?: string;
     boxShadow?: string;
     border?: string;
     borderRadius?: string;
+    commonStyles?: Array<string>;
 }
 
-const UnstyledCard = ({ className, children, image, imageSize }: PropTypes) => {
+const UnstyledCard = ({ className, children, image, imageSize, imageStyle, darkMode }: PropTypes) => {
+    const theme = useContext(ThemeContext);
+    
     return (
         <div className={className}>
             {
@@ -25,8 +36,9 @@ const UnstyledCard = ({ className, children, image, imageSize }: PropTypes) => {
                         src={image}
                         width={imageSize.x}
                         height={imageSize.y}
+                        style={imageStyle}
                         alt="card-description"
-                        style={{paddingRight: '.5rem'}}
+                        className={darkMode && theme === 'dark' ? 'logo-dark-mode' : ''}
                     />
                 : null
             }
@@ -37,13 +49,20 @@ const UnstyledCard = ({ className, children, image, imageSize }: PropTypes) => {
 
 export const Card = styled(UnstyledCard)`
     display: flex;
-    flex-direction: ${props => props.flexDirection ? props.flexDirection : 'row'};
-    justify-content: ${props => props.justifyContent ? props.justifyContent : 'center'};
-    align-items: ${props => props.alignItems ? props.alignItems : 'center'};
-    margin: ${props => props.margin ? props.margin : '0 0 2rem 0'};
-    padding: ${props => props.padding ? props.padding : '2rem'};
-    overflow: ${props => props.overflow ? props.overflow : 'hidden'};
-    box-shadow: ${props => props.boxShadow ? props.boxShadow : '.5rem .5rem 0 var(--secondary)'};
-    border: ${props => props.border ? props.border : '.2rem solid var(--primary)'};
-    border-radius: ${props => props.borderRadius ? props.borderRadius : '.8rem'};
+    flex-direction: ${props => props.flexDirection ?? 'row'};
+    justify-content: ${props => props.justifyContent ?? 'center'};
+    align-items: ${props => props.alignItems ?? 'center'};
+    gap: ${props => props.gap ?? '0'};
+    margin: ${props => props.margin ?? '0 0 0 0'};
+    padding: ${props => props.padding ?? '2rem'};
+    width: ${props => props.width ?? 'auto'};
+    height: ${props => props.height ?? 'auto'};
+    overflow: ${props => props.overflow ?? 'hidden'};
+    box-shadow: ${props => props.boxShadow ?? '.5rem .5rem 0 var(--secondary)'};
+    border: ${props => props.border ?? '.2rem solid var(--primary)'};
+    border-radius: ${props => props.borderRadius ?? '.8rem'};
+    
+    & > .logo-dark-mode {
+        filter: invert(1);
+    }
 `

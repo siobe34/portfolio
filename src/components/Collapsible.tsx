@@ -1,13 +1,35 @@
-import { useState, useEffect, useRef } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components';
+
+import { useState, useEffect, useRef } from 'react';
+import { Button } from './Button';
 
 type ChildType = React.ReactNode;
 type PropTypes = {
     children: [ChildType, ChildType];
     className?: string;
+    buttonWidth?: string;
+    buttonColor?: string;
+    buttonBackgroundColor?: string;
+    buttonHoverColor?: string;
+    buttonHoverOpacity?: string;
+    flexDirection?: string;
+    justifyContent?: string;
+    alignItems?: string;
+    gap?: string;
+    contentWidth?: string;
 }
 
-const UnstyledCollapsible = ({ className, children }: PropTypes) => {
+const UnstyledCollapsible = ({
+    className,
+    children,
+    buttonWidth,
+    buttonColor,
+    buttonBackgroundColor,
+    buttonHoverColor,
+    buttonHoverOpacity
+    }: PropTypes) => {
     const ref = useRef<HTMLDivElement>(null);
     
     const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -32,9 +54,17 @@ const UnstyledCollapsible = ({ className, children }: PropTypes) => {
     
     return (
         <div className={className}>
-            <button type="button" onClick={() => setIsOpen(!isOpen)}>
+            <Button
+                onButtonClick={() => setIsOpen(!isOpen)}
+                width={`${buttonWidth ?? 'fit-content'}`}
+                color={`${buttonColor ?? 'inherit'}`}
+                backgroundColor={`${buttonBackgroundColor ?? 'inherit'}`}
+                hoverColor={`${buttonHoverColor ?? 'inherit'}`}
+                hoverOpacity={`${buttonHoverOpacity ?? '0.5'}`}
+            >
+                <FontAwesomeIcon icon={isOpen ? faAngleUp : faAngleDown} onClick={() => setIsOpen(!isOpen)}/>
                 {children[0]}
-            </button>
+            </Button>
             <div className="collapsible" style={{ height }}>
                 <div ref={ref}>
                     <div className="collapsible-content" style={isOpen ? {display: 'flex'   } : {display: 'none'}}>{children[1]}</div>
@@ -45,19 +75,16 @@ const UnstyledCollapsible = ({ className, children }: PropTypes) => {
 }
 
 export const Collapsible = styled(UnstyledCollapsible)`
+    display: flex;
+    flex-direction: ${props => props.flexDirection ?? 'column'};
+    justify-content: ${props => props.justifyContent ?? 'flex-start'};
+    align-items: ${props => props.alignItems ?? 'center'};
+    gap: ${props => props.gap ?? '.5rem'};
     & > .collapsible {
         transition: height 0.2s ease-in-out;
     }
-    & > button {
-        border: none;
-        outline: none;
-        cursor: pointer;
-        background-color: inherit;
-    }
-    & > button:hover {
-        box-shadow: 2px 2px 2px black;
-    }
+    
     & > .collapsible-content {
-        width: 100%
+        contentWidth: ${props => props.contentWidth ?? '100%'};
     }
 `
