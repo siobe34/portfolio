@@ -27,3 +27,10 @@ package-lock.json
 
 # docs
 README.md
+
+#api
+/api/.vscode
+/api/node_modules
+/api/package-lock.json
+/api/tsconfig.json
+/api/.prettierrc
