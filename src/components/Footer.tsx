@@ -107,7 +107,7 @@ export const Footer = styled(UnstyledFooter)`
     }
     
     & .star-right {
-        transform: rotateX(180deg) rotateY(180deg);
+        transform: rotateY(180deg);
         transition: all 0.5s ease-out;
     }
     
