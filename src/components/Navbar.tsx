@@ -1,3 +1,7 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import styled from 'styled-components';
+
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { StyledLink } from './StyledLink';
@@ -7,7 +11,6 @@ import About from '../pages/About';
 import Projects from '../pages/Projects';
 import Technologies from '../pages/Technologies';
 import Resume from '../pages/Resume';
-import styled from 'styled-components';
 import logo from '../assets/initials.svg';
 
 type PropTypes = {
@@ -36,9 +39,9 @@ function UnstyledNavbar({ className }: PropTypes) {
             <Button
                 className='mobile-menu'
                 onButtonClick={handleMenuClick}
-                fontSize="1.2rem"
+                // fontSize="1.2rem"
             >
-                &#9776;
+                <FontAwesomeIcon icon={faBars} />
             </Button>
         </nav>
         <Routes>
@@ -64,11 +67,11 @@ export const Navbar = styled(UnstyledNavbar)`
     
     & .navbar-menu {
         position: absolute;
-        display: none;
+        display: flex;
         margin: 0;
         padding: 0;
         top: 100%;
-        left: 0%;
+        left: -150%;
         width: 100%;
         flex-direction: column;
         justify-content: center;
@@ -81,13 +84,15 @@ export const Navbar = styled(UnstyledNavbar)`
         margin-inline-end: 0;
         padding-inline-start: 0;
         text-transform: uppercase;
+        transition: left 250ms ease;
     }
-    
+    & .navbar-menu li {
+        padding: 1rem 0 1rem 2vw;
+    }
     & .navbar-menu.active {
         display: flex;
-    }
-    & .navbar-menu.active li {
-        padding: 1rem 0 1rem 2vw;
+        left: 0%;
+        transition: left 250ms ease;
     }
     
     /* Desktop Styles */
@@ -100,6 +105,7 @@ export const Navbar = styled(UnstyledNavbar)`
             gap: 4vw;
             width: auto;
             height: 100%;
+            padding: 0;
             border: none;
             padding-inline-start: 0;
             text-transform: uppercase;
