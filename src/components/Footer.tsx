@@ -21,12 +21,23 @@ function UnstyledFooter({ className, setTheme }: PropTypes) {
     
     const [modalState, setModalState] = useState<boolean>(false);
     const [recommendation, setRecommendation] = useState<string | null>(null);
-    const handleRecommendation = () => {
-        if (recommendation === 'test') {
-            setRecommendation('not test')
-            return
-        };
-        setRecommendation('test');
+    
+    const randomInteger = (min: number, max: number) => {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    async function getRecommendation(mediaType: string) {
+        const opts = {
+            method: 'GET',
+            headers: {
+                'Content-Type':'application/json'
+                }
+            };
+        const response = await fetch(`http://127.0.0.1:1337/${mediaType}`, opts);
+        const json = await response.json();
+        
+        if (response.status !== 200) setRecommendation(null);
+        const length = json.length;
+        setRecommendation(json[randomInteger(0, length)]);
     };
     
     return (
@@ -61,25 +72,25 @@ function UnstyledFooter({ className, setTheme }: PropTypes) {
                 <Container gap='1rem' margin='3rem 0' width='100%'>
                     <Button
                         width='100%'
-                        onButtonClick={handleRecommendation}
+                        onButtonClick={() => getRecommendation('movies')}
                     >
                         <FontAwesomeIcon icon={faClapperboard} style={{marginRight:'0.5rem'}}/>Movies
                     </Button>
                     <Button
                         width='100%'
-                        onButtonClick={handleRecommendation}
+                        onButtonClick={() => getRecommendation('shows')}
                     >
                         <FontAwesomeIcon icon={faTv} style={{marginRight:'0.5rem'}}/>Shows
                     </Button>
                     <Button
                         width='100%'
-                        onButtonClick={handleRecommendation}
+                        onButtonClick={() => getRecommendation('anime')}
                     >
                         <FontAwesomeIcon icon={faZap} style={{marginRight:'0.5rem'}}/>Anime
                     </Button>
                     <Button
                         width='100%'
-                        onButtonClick={handleRecommendation}
+                        onButtonClick={() => getRecommendation('music')}
                     >
                         <FontAwesomeIcon icon={faMusic} style={{marginRight:'0.5rem'}}/>Music
                     </Button>
