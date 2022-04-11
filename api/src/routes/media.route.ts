@@ -1,6 +1,7 @@
-import { Express, Request, Response} from 'express';
+import { Express, Request, Response } from 'express';
+import express from 'express';
 
-
+import movieController from '../controllers/movie.controller';
 type DataTypes = {
     movies: string[];
     anime: string[];
@@ -8,7 +9,6 @@ type DataTypes = {
     music: string[];
     [key: string]: string[]
 }
-
 const dummyData: DataTypes = {
     movies: [
         'Movie Example 1',
@@ -36,12 +36,15 @@ const dummyData: DataTypes = {
     ]
 }
 
-const routes = (app: Express) => {
-    app.get('/:mediaType', (req: Request, res: Response) => {
-        const mediaType: keyof DataTypes =   req.params.mediaType;
-        if (!Object.keys(dummyData).includes(mediaType)) res.sendStatus(404);
-        res.send(dummyData[mediaType]);
-    })
-}
 
-export default routes;
+const router = express.Router();
+
+router.get('/:mediaType', (req: Request, res: Response) => {
+    const mediaType: keyof DataTypes =   req.params.mediaType;
+    if (!Object.keys(dummyData).includes(mediaType)) res.sendStatus(404);
+    res.send(dummyData[mediaType]);
+});
+
+router.post('/:mediaType', movieController.createMovie);
+
+export default router;

@@ -9,6 +9,7 @@ type ChildType = React.ReactNode;
 type PropTypes = {
     children: [ChildType, ChildType];
     className?: string;
+    collapseStyle?: React.CSSProperties;
     buttonWidth?: string;
     buttonColor?: string;
     buttonBackgroundColor?: string;
@@ -24,6 +25,7 @@ type PropTypes = {
 const UnstyledCollapsible = ({
     className,
     children,
+    collapseStyle,
     buttonWidth,
     buttonColor,
     buttonBackgroundColor,
@@ -53,17 +55,18 @@ const UnstyledCollapsible = ({
     }, [isOpen])
     
     return (
-        <div className={className}>
+        <div className={className} style={collapseStyle}>
             <Button
                 onButtonClick={() => setIsOpen(!isOpen)}
+                flexDirection='column'
                 width={`${buttonWidth ?? 'fit-content'}`}
                 color={`${buttonColor ?? 'inherit'}`}
                 backgroundColor={`${buttonBackgroundColor ?? 'inherit'}`}
                 hoverColor={`${buttonHoverColor ?? 'inherit'}`}
                 hoverOpacity={`${buttonHoverOpacity ?? '0.5'}`}
             >
-                <FontAwesomeIcon icon={isOpen ? faAngleUp : faAngleDown} onClick={() => setIsOpen(!isOpen)}/>
                 {children[0]}
+                <FontAwesomeIcon icon={isOpen ? faAngleUp : faAngleDown}/>
             </Button>
             <div className="collapsible" style={{ height }}>
                 <div ref={ref}>

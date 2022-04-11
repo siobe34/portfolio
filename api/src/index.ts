@@ -1,15 +1,21 @@
 import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
+
+import connectDatabase from './utils/connectDatabase';
 import config from './config/config';
-import routes from './routes';
+import mediaRouter from './routes/media.route';
 
 const app = express();
+
 app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
-app.listen(config.port, () => {
-    console.log(`API listening on port ${config.port}`);
-    routes(app);
+app.use('/media', mediaRouter);
+
+app.listen(config.port, async () => {
+    console.log(`[INFO]: Server listening on port ${config.port}`);
+    
+    await connectDatabase();
 });

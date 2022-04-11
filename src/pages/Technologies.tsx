@@ -109,6 +109,7 @@ function Technologies() {
                                         boxShadow={commonNestedCardStyles.boxShadow}
                                         image={Logos.styledcomponents}
                                         imageSize={{x:'80%', y:'80%'}}
+                                        imageStyle={{backgroundColor:'white', borderRadius:'.5rem'}}
                                     ><></></Card>
                                     <Card
                                         margin={commonNestedCardStyles.margin}
@@ -123,6 +124,7 @@ function Technologies() {
                                         boxShadow={commonNestedCardStyles.boxShadow}
                                         image={Logos.jquery}
                                         imageSize={{x:'80%', y:'80%'}}
+                                        imageStyle={{backgroundColor:'white', borderRadius:'.5rem'}}
                                     ><></></Card>
                                     <Card
                                         margin={commonNestedCardStyles.margin}
@@ -130,6 +132,7 @@ function Technologies() {
                                         boxShadow={commonNestedCardStyles.boxShadow}
                                         image={Logos.express}
                                         imageSize={{x:'80%', y:'80%'}}
+                                        darkMode
                                     ><></></Card>
                                     <Card
                                         margin={commonNestedCardStyles.margin}
@@ -138,6 +141,7 @@ function Technologies() {
                                         image={Logos.nodejs}
                                         height='5rem'
                                         imageSize={{x:'80%', y:'80%'}}
+                                        imageStyle={{backgroundColor:'white', borderRadius:'.5rem'}}
                                     ><></></Card>
                                 </Grid>
                             </Collapsible>

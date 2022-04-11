@@ -6,6 +6,7 @@ type PropTypes = {
     onButtonClick?: React.MouseEventHandler;
     buttonType?: 'button' | 'submit' | 'reset' | undefined;
     display?: string;
+    flexDirection?: string;
     justifyContent?: string;
     alignItems?: string;
     flexWrap?: string;
@@ -42,6 +43,7 @@ const UnstyledButton = ({ className, children, onButtonClick, buttonType }: Prop
 
 export const Button = styled(UnstyledButton)`
     display: ${props => props.display ?? 'inline-flex'};
+    flex-direction: ${props => props.flexDirection ?? 'row'};
     justify-content: ${props => props.justifyContent ?? 'center'};
     align-items: ${props => props.alignItems ?? 'center'};
     flex-wrap: ${props => props.flexWrap ?? 'wrap'};

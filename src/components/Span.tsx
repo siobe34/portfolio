@@ -3,6 +3,7 @@ import styled from 'styled-components';
 type PropTypes = {
     children: React.ReactNode;
     className?: string;
+    spanStyle?: React.CSSProperties;
     flexWrap?: string;
     flexDirection?: string;
     justifyContent?: string;
@@ -19,9 +20,9 @@ type PropTypes = {
     backgroundColor?: string;
 }
 
-const UnstyledSpan = ({ className, children }: PropTypes) => {
+const UnstyledSpan = ({ className, children, spanStyle }: PropTypes) => {
     return (
-        <span className={className}>
+        <span className={className} style={spanStyle}>
             {children}
         </span>
     )

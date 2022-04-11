@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Container } from '../components/Container';
 import { PageContent } from '../components/PageContent';
 import { Span } from '../components/Span';
+import { Collapsible } from '../components/Collapsible';
 import { Header } from '../components/Header';
 import { Button } from '../components/Button';
 import { List } from '../components/List';
@@ -27,14 +28,14 @@ function About() {
                         whiteSpace='revert'
                         onButtonClick={() => setTLDR(true)}
                     >
-                        Show me a Summary!
+                        <Header headerType='h3' fontWeight='unset'>Show me a Summary!</Header>
                     </Button>
                     <Button
                         width='calc(50% - .5rem)'
                         whiteSpace='revert'
                         onButtonClick={() => setTLDR(false)}
                     >
-                        Read in more detail
+                        <Header headerType='h3' fontWeight='unset'>Read in more detail</Header>
                     </Button>
                 </Container>
                 {
@@ -67,36 +68,45 @@ function About() {
                             discovered my passion for Web Development. I found myself wanting to be the one who developed the applications I was working
                             with - so I set out on my journey to self-learn programming.
                             <br/>
-                            <br/>
-                            I graduated in 2019 from Ryerson University with a Bachelor's in Engineering and began full-time the same summer. Since then,
-                            I've refined my ability to manage my time, prioritize and track tasks, and of course, communicate effectively with my colleagues
-                            and superiors. I believe my strongest assets are my ability to tackle assignments with initiative and adapt my skills according
-                            to the task at hand.
-                            <br/>
-                            <br/>
-                            My programming journey began with learning the basics using Python and making simple websites with vanilla JavaScript, HTML, and
-                            CSS. After establishing some fundamentals, I moved onto learning React and a few backend frameworks connected to Databases. When
-                            developing the projects seen in my portfolio, I learned best practices for designing relational databases, RestAPI's with CRUD
-                            functions, and front-end UI's.
-                            <br/>
-                            <br/>
-                            Currently, my full stack development experience consists mainly of personal projects but I believe I've reached a point where my
-                            portfolio demonstrates my knowledge of web development can be an asset to any team.
-                            <br/>
-                            <br/>
-                            Look forward to hearing from you (:
                         </p>
-                        <Span backgroundColor='var(--primary)' color='var(--bg-primary-txt)' padding='.5rem .8rem' borderRadius='.5rem'>
-                            <Header headerType='h3'>What do you do outside of work?</Header>
-                        </Span>
-                        <p>
-                            Well I love to learn so I'm usually learning something new, my latest obsession is
-                            <Span backgroundColor='red' borderRadius='.5rem' padding='.25rem' width='fit-content'>(insert whatever I'm learning at the moment
-                            here).</Span>
-                            <br/>
-                            Otherwise, my lifelong hobbies to date include reading, playing basketball, and dreaming about being good at pretty much any racquet
-                            sport.
-                        </p>
+                        <Collapsible collapseStyle={{alignSelf:'center'}}>
+                            {/* <></> */}
+                            <Span spanStyle={{alignSelf:'center', margin:'.5rem 0'}} backgroundColor='var(--primary)' color='var(--bg-primary-txt)' padding='.5rem .8rem' borderRadius='.5rem'>
+                                <Header headerType='h3'>Read more about me</Header>
+                            </Span>
+                            <Container flexDirection="column">
+                            <p>
+                                I graduated in 2019 from Ryerson University with a Bachelor's in Engineering and began full-time the same summer. Since then,
+                                I've refined my ability to manage my time, prioritize and track tasks, and of course, communicate effectively with my colleagues
+                                and superiors. I believe my strongest assets are my ability to tackle assignments with initiative and adapt my skills according
+                                to the task at hand.
+                                <br/>
+                                <br/>
+                                My programming journey began with learning the basics using Python and making simple websites with vanilla JavaScript, HTML, and
+                                CSS. After establishing some fundamentals, I moved onto learning React and a few backend frameworks connected to Databases. When
+                                developing the projects seen in my portfolio, I learned best practices for designing relational databases, RestAPI's with CRUD
+                                functions, and front-end UI's.
+                                <br/>
+                                <br/>
+                                Currently, my full stack development experience consists mainly of personal projects but I believe I've reached a point where my
+                                portfolio demonstrates my knowledge of web development can be an asset to any team.
+                                <br/>
+                                <br/>
+                                Look forward to hearing from you (:
+                            </p>
+                            <Span spanStyle={{alignSelf:'flex-start'}} backgroundColor='var(--primary)' color='var(--bg-primary-txt)' padding='.5rem .8rem' borderRadius='.5rem'>
+                                <Header headerType='h3'>What do you do outside of work?</Header>
+                            </Span>
+                            <p>
+                                Well I love to learn so I'm usually learning something new, my latest obsession is
+                                <Span backgroundColor='red' borderRadius='.5rem' padding='.25rem' width='fit-content'>(insert whatever I'm learning at the moment
+                                here).</Span>
+                                <br/>
+                                Otherwise, my lifelong hobbies to date include reading, playing basketball, and dreaming about being good at pretty much any racquet
+                                sport.
+                            </p>
+                            </Container>
+                        </Collapsible>
                     </Container>
                 }
             </PageContent>
