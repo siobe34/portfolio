@@ -1,18 +1,19 @@
 :root {
     --light-bg: #fff;
+    /* --dark-bg: #121212; */
     --dark-bg: #323332;
     --light-txt: #000;
     --dark-txt: #fff;
     --light-primary: #b58df9;
     --light-secondary: #8cd8f0;
-    --dark-primary: #630FF5;
-    --dark-secondary: #8cd8f0;
+    --dark-primary: #bb86fc;
+    /* --dark-secondary: #8cd8f0; */
+    --dark-secondary: #54BAB9;
 }
 .light {
     --bg-colour: var(--light-bg);
     --bg-primary: var(--primary);
-    /* --bg-primary-txt: var(--dark-txt); */
-    --bg-primary-txt: #14141;
+    --bg-primary-txt: var(--light-txt);
     --txt-primary: var(--light-txt);
     --txt-secondary: var(--dark-txt);
     --primary: var(--light-primary);
@@ -21,7 +22,7 @@
 .dark {
     --bg-colour: var(--dark-bg);
     --bg-primary: var(--primary);
-    --bg-primary-txt: var(--dark-txt);
+    --bg-primary-txt: var(--light-txt);
     --txt-primary: var(--dark-txt);
     --txt-secondary: var(--light-txt);
     --primary: var(--dark-primary);

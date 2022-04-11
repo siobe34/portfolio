@@ -32,7 +32,7 @@ function UnstyledFooter({ className, setTheme }: PropTypes) {
                 'Content-Type':'application/json'
                 }
             };
-        const response = await fetch(`http://127.0.0.1:1337/${mediaType}`, opts);
+        const response = await fetch(`http://127.0.0.1:1337/media/${mediaType}`, opts);
         const json = await response.json();
         
         if (response.status !== 200) setRecommendation(null);
@@ -63,7 +63,7 @@ function UnstyledFooter({ className, setTheme }: PropTypes) {
                         This started out as a simple front-end web app to serve as a portfolio/resume but I wanted to implement some sort of backend so...<span>&#128071;</span>
                         <br/>
                         <br/>
-                        <Span color='var(--txt-secondary)' backgroundColor='var(--secondary)' borderRadius='.2rem' padding='.5rem'>
+                        <Span color='var(--bg-primary-txt)' backgroundColor='var(--secondary)' borderRadius='.2rem' padding='.5rem'>
                             Click any of the buttons below to get a recommendation of each respective media type based on some of my personal favourite movies,
                             shows, anime, and music.
                         </Span>
@@ -97,7 +97,7 @@ function UnstyledFooter({ className, setTheme }: PropTypes) {
                 </Container>
                 {
                     recommendation &&
-                    <Span color='var(--txt-secondary)' backgroundColor='var(--secondary)' borderRadius='.2rem' padding='1rem 2rem'>
+                    <Span color='var(--bg-primary-txt)' backgroundColor='var(--secondary)' borderRadius='.2rem' padding='1rem 2rem'>
                         <Header headerType='h4' textTransform='uppercase'>{ recommendation }</Header>
                     </Span>
                 }

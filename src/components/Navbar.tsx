@@ -28,7 +28,7 @@ function UnstyledNavbar({ className }: PropTypes) {
         <>
         <nav className={`navbar ${className}`}>
             <StyledLink to="/">
-                <img src={logo} alt='initials' height='30px' className='logo'/>
+                <img src={logo} alt='initials' height='30px' className='logo' style={{filter: 'invert(1)'}}/>
             </StyledLink>
             <ul className={`navbar-menu ${mobileMenu ? 'active' : null}`}>
                 <li><StyledLink onClick={handleMenuClick} to="/about-me">About Me</StyledLink></li>

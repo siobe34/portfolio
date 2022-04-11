@@ -3,6 +3,7 @@ import styled from 'styled-components';
 type PropTypes = {
     children: React.ReactNode;
     className?: string;
+    containerStyle?: React.CSSProperties;
     flexWrap?: string;
     flexDirection?: string;
     justifyContent?: string;
@@ -19,9 +20,9 @@ type PropTypes = {
     backgroundColor?: string;
 }
 
-const UnstyledContainer = ({ className, children }: PropTypes) => {
+const UnstyledContainer = ({ className, children, containerStyle }: PropTypes) => {
     return (
-        <div className={className}>
+        <div className={className} style={containerStyle}>
             {children}
         </div>
     )
