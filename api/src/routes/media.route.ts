@@ -1,4 +1,4 @@
-import { Express, Request, Response } from 'express';
+import { Request, Response } from 'express';
 import express from 'express';
 
 import movieController from '../controllers/movie.controller';
