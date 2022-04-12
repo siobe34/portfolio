@@ -4,44 +4,30 @@ type PropTypes = {
     children: React.ReactNode;
     className?: string;
     spanStyle?: React.CSSProperties;
-    flexWrap?: string;
-    flexDirection?: string;
-    justifyContent?: string;
-    alignItems?: string;
-    gap?: string;
-    margin?: string;
-    padding?: string;
-    width?: string;
-    height?: string;
-    overflow?: string;
-    border?: string;
-    borderRadius?: string;
-    color?: string;
-    backgroundColor?: string;
-}
+};
 
 const UnstyledSpan = ({ className, children, spanStyle }: PropTypes) => {
     return (
         <span className={className} style={spanStyle}>
             {children}
         </span>
-    )
-}
+    );
+};
 
 export const Span = styled(UnstyledSpan)`
     display: flex;
-    flex-wrap: ${props => props.flexWrap ?? 'nowrap'};
-    flex-direction: ${props => props.flexDirection ?? 'row'};
-    justify-content: ${props => props.justifyContent ?? 'flex-start'};
-    align-items: ${props => props.alignItems ?? 'center'};
-    gap: ${props => props.gap ?? '0'};
-    margin: ${props => props.margin ?? '0'};
-    padding: ${props => props.padding ?? '0'};
-    width: ${props => props.width ?? 'auto'};
-    height: ${props => props.height ?? 'auto'};
-    overflow: ${props => props.overflow ?? 'hidden'};
-    border: ${props => props.border ?? 'none'};
-    border-radius: ${props => props.borderRadius ?? 'unset'};
-    color: ${props => props.color ?? 'inherit'};
-    background-color: ${props => props.backgroundColor ?? 'inherit'};
-`
+    flex-wrap: ${(props) => props.spanStyle?.flexWrap ?? 'nowrap'};
+    flex-direction: ${(props) => props.spanStyle?.flexDirection ?? 'row'};
+    justify-content: ${(props) => props.spanStyle?.justifyContent ?? 'flex-start'};
+    align-items: ${(props) => props.spanStyle?.alignItems ?? 'center'};
+    gap: ${(props) => props.spanStyle?.gap ?? '0'};
+    margin: ${(props) => props.spanStyle?.margin ?? '0'};
+    padding: ${(props) => props.spanStyle?.padding ?? '0'};
+    width: ${(props) => props.spanStyle?.width ?? 'auto'};
+    height: ${(props) => props.spanStyle?.height ?? 'auto'};
+    overflow: ${(props) => props.spanStyle?.overflow ?? 'hidden'};
+    border: ${(props) => props.spanStyle?.border ?? 'none'};
+    border-radius: ${(props) => props.spanStyle?.borderRadius ?? 'unset'};
+    color: ${(props) => props.spanStyle?.color ?? 'inherit'};
+    background-color: ${(props) => props.spanStyle?.backgroundColor ?? 'inherit'};
+`;

@@ -21,7 +21,7 @@ import postman from '../assets/postman.svg';
 import powerBI from '../assets/powerbi.svg';
 import projectmanagement from '../assets/projectmanagement.svg';
 import proxmox from '../assets/proxmox.png';
-import python from '../assets/python.svg'
+import python from '../assets/python.svg';
 import react from '../assets/react.svg';
 import reactrouter from '../assets/reactrouter.svg';
 import restAPI from '../assets/restapi.svg';
@@ -42,7 +42,7 @@ const Logos = {
     express,
     flask,
     github,
-        googlemaps,
+    googlemaps,
     HTML,
     javascript,
     jquery,
@@ -68,6 +68,6 @@ const Logos = {
     traefik,
     typescript,
     ubuntu,
-}
+};
 
 export default Logos;

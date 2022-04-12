@@ -4,44 +4,26 @@ type PropTypes = {
     children: React.ReactNode;
     className?: string;
     containerStyle?: React.CSSProperties;
-    flexWrap?: string;
-    flexDirection?: string;
-    justifyContent?: string;
-    alignItems?: string;
-    gap?: string;
-    margin?: string;
-    padding?: string;
-    width?: string;
-    height?: string;
-    overflow?: string;
-    border?: string;
-    borderRadius?: string;
-    color?: string;
-    backgroundColor?: string;
-}
+};
 
-const UnstyledContainer = ({ className, children, containerStyle }: PropTypes) => {
-    return (
-        <div className={className} style={containerStyle}>
-            {children}
-        </div>
-    )
-}
+const UnstyledContainer = ({ className, children }: PropTypes) => {
+    return <div className={className}>{children}</div>;
+};
 
 export const Container = styled(UnstyledContainer)`
     display: flex;
-    flex-wrap: ${props => props.flexWrap ?? 'nowrap'};
-    flex-direction: ${props => props.flexDirection ?? 'row'};
-    justify-content: ${props => props.justifyContent ?? 'flex-start'};
-    align-items: ${props => props.alignItems ?? 'center'};
-    gap: ${props => props.gap ?? '0'};
-    margin: ${props => props.margin ?? '0'};
-    padding: ${props => props.padding ?? '0'};
-    width: ${props => props.width ?? 'auto'};
-    height: ${props => props.height ?? 'auto'};
-    overflow: ${props => props.overflow ?? 'hidden'};
-    border: ${props => props.border ?? 'none'};
-    border-radius: ${props => props.borderRadius ?? 'unset'};
-    color: ${props => props.color ?? 'inherit'};
-    background-color: ${props => props.backgroundColor ?? 'inherit'};
-`
+    flex-wrap: ${(props) => props.containerStyle?.flexWrap ?? 'nowrap'};
+    flex-direction: ${(props) => props.containerStyle?.flexDirection ?? 'row'};
+    justify-content: ${(props) => props.containerStyle?.justifyContent ?? 'flex-start'};
+    align-items: ${(props) => props.containerStyle?.alignItems ?? 'center'};
+    gap: ${(props) => props.containerStyle?.gap ?? '0'};
+    margin: ${(props) => props.containerStyle?.margin ?? '0'};
+    padding: ${(props) => props.containerStyle?.padding ?? '0'};
+    width: ${(props) => props.containerStyle?.width ?? 'auto'};
+    height: ${(props) => props.containerStyle?.height ?? 'auto'};
+    overflow: ${(props) => props.containerStyle?.overflow ?? 'hidden'};
+    border: ${(props) => props.containerStyle?.border ?? 'none'};
+    border-radius: ${(props) => props.containerStyle?.borderRadius ?? 'unset'};
+    color: ${(props) => props.containerStyle?.color ?? 'inherit'};
+    background-color: ${(props) => props.containerStyle?.backgroundColor ?? 'inherit'};
+`;

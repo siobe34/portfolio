@@ -9,39 +9,24 @@ type PropTypes = {
     className?: string;
     modalState: boolean;
     setModalState: React.Dispatch<React.SetStateAction<boolean>>;
-    flexDirection?: string;
-    flexWrap?: string;
-    justifyContent?: string;
-    alignItems?: string;
-    gap?: string;
-    height?: string;
-    width?: string;
-    padding?: string;
-}
+    modalStyle?: React.CSSProperties;
+};
 
-const UnstyledModal = ({
-    className,
-    children,
-    modalState,
-    setModalState
-    }: PropTypes) => {
-        if (!modalState) {
-            return null;
-        }
-        return (
-            <div className={className}>
-                <div className='modal-content'>
-                    <Button
-                        className='modal-close'
-                        onButtonClick={() => setModalState(false)}
-                    >
-                            <FontAwesomeIcon icon={faClose}/>
-                    </Button>
-                    { children }
-                </div>
+const UnstyledModal = ({ className, children, modalState, setModalState }: PropTypes) => {
+    if (!modalState) {
+        return null;
+    }
+    return (
+        <div className={className}>
+            <div className='modal-content'>
+                <Button className='modal-close' onButtonClick={() => setModalState(false)}>
+                    <FontAwesomeIcon icon={faClose} />
+                </Button>
+                {children}
             </div>
-        );
-    };
+        </div>
+    );
+};
 
 export const Modal = styled(UnstyledModal)`
     position: fixed;
@@ -53,22 +38,31 @@ export const Modal = styled(UnstyledModal)`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(0,0,0,0.85);
-    
+    background-color: rgba(0, 0, 0, 0.85);
+
     & .modal-content {
-        display: flex;
-        flex-direction: ${props => props.flexDirection ?? 'column'};
-        justify-content: ${props => props.justifyContent ?? 'flex-start'};
-        align-items: ${props => props.alignItems ?? 'center'};
-        padding: ${props => props.padding ?? '1rem'};
-        width: ${props => props.width ?? '60vw'};
-        height: ${props => props.height ?? '60vh'};
-        overflow: hidden;
-        background-color: var(--bg-colour);
-        border-radius: .35rem;
+        display: ${(props) => props.modalStyle?.display ?? 'flex'};
+        flex-direction: ${(props) => props.modalStyle?.flexDirection ?? 'column'};
+        justify-content: ${(props) => props.modalStyle?.justifyContent ?? 'flex-start'};
+        align-items: ${(props) => props.modalStyle?.alignItems ?? 'center'};
+        padding: ${(props) => props.modalStyle?.padding ?? '1rem'};
+        margin: ${(props) => props.modalStyle?.margin ?? '0'};
+        width: ${(props) => props.modalStyle?.width ?? '60vw'};
+        height: ${(props) => props.modalStyle?.height ?? '60vh'};
+        overflow: ${(props) => props.modalStyle?.overflow ?? 'auto'};
+        background-color: ${(props) => props.modalStyle?.backgroundColor ?? 'var(--bg-colour)'};
+        border-radius: ${(props) => props.modalStyle?.borderRadius ?? '.35rem'};
     }
-    
+
     & .modal-close {
         align-self: end;
     }
-`
+
+    /* Mobile Styles */
+    @media all and (max-width: 720px) {
+        .modal-content {
+            width: fit-content;
+            height: revert;
+        }
+    }
+`;

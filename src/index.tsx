@@ -6,7 +6,7 @@ import './index.css';
 const container: HTMLElement = document.getElementById('root')!;
 const root = createRoot(container);
 root.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>
 );
