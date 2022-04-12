@@ -122,7 +122,7 @@ function Projects() {
                     </Card>
                     <Card cardStyle={styles.card.container}>
                         <Header headerType='h3' headerStyle={styles.card.header}>
-                            Personal Website
+                            Portfolio Website
                         </Header>
                         <p style={styles.text}>My portfolio/resume for potential employers to gauge my skills as a web developer.</p>
                         <Button buttonStyle={styles.card.button}>This is the website you're currently browsing.</Button>
