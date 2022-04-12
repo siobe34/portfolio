@@ -90,13 +90,6 @@ function Home() {
                 </Header>
                 <Header headerType='h4'>BEng</Header>
                 <Grid gridStyle={styles.grid}>
-                    <Card image={imgAbout} imageSize={{ x: '180px', y: '180px' }} cardStyle={styles.card}>
-                        <Button buttonStyle={styles.button}>
-                            <a href='/about-me' style={styles.link}>
-                                Read about me <FontAwesomeIcon icon={faLongArrowRight} />
-                            </a>
-                        </Button>
-                    </Card>
                     <Card image={imgProjects} imageSize={{ x: '180px', y: '180px' }} cardStyle={styles.cardHighlight}>
                         <Button>
                             <a href='/projects' style={styles.link}>
@@ -104,10 +97,10 @@ function Home() {
                             </a>
                         </Button>
                     </Card>
-                    <Card image={imgResume} imageSize={{ x: '180px', y: '180px' }} cardStyle={styles.card}>
+                    <Card image={imgAbout} imageSize={{ x: '180px', y: '180px' }} cardStyle={styles.card}>
                         <Button buttonStyle={styles.button}>
-                            <a href='/resume' style={styles.link}>
-                                See a formal Resume <FontAwesomeIcon icon={faLongArrowRight} />
+                            <a href='/about-me' style={styles.link}>
+                                Read about me <FontAwesomeIcon icon={faLongArrowRight} />
                             </a>
                         </Button>
                     </Card>
@@ -115,6 +108,13 @@ function Home() {
                         <Button buttonStyle={styles.button}>
                             <a href='/technical-skills' style={styles.link}>
                                 View the tech stacks I'm familiar with <FontAwesomeIcon icon={faLongArrowRight} />
+                            </a>
+                        </Button>
+                    </Card>
+                    <Card image={imgResume} imageSize={{ x: '180px', y: '180px' }} cardStyle={styles.card}>
+                        <Button buttonStyle={styles.button}>
+                            <a href='/resume' style={styles.link}>
+                                See a formal Resume <FontAwesomeIcon icon={faLongArrowRight} />
                             </a>
                         </Button>
                     </Card>
