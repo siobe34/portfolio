@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart, faStarHalfStroke, faZap, faClapperboard, faTv, faMusic } from '@fortawesome/free-solid-svg-icons';
+import { faHeart, faStarHalfStroke, faZap, faClapperboard, faTv, faMusic, faSadCry } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import styled from 'styled-components';
 
@@ -52,9 +52,9 @@ const styles = {
         },
         input: {
             width: '200px',
-            outline: 'none',
             color: 'inherit',
             backgroundColor: 'inherit',
+            outline: 'none',
             border: 'none',
             textAlign: 'center' as 'center',
             fontWeight: 'bold',
@@ -69,33 +69,42 @@ function UnstyledFooter({ className, setTheme }: PropTypes) {
     const [modalState, setModalState] = useState<boolean>(false);
     const [media, setMedia] = useState<string | null>(null);
     const [recommendation, setRecommendation] = useState<string | null>(null);
+    const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => setRecommendation(e.target.value);
 
     const randomInteger = (min: number, max: number) => {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     };
-    async function getRecommendation(method: string) {
-        let opts: RequestInit = {
-            method: method,
+    async function getRecommendation() {
+        const opts: RequestInit = {
+            method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
             },
         };
-        if (method === 'POST' && recommendation !== null) {
-            opts = {
-                ...opts,
-                body: JSON.stringify({ title: recommendation }),
-            };
-        }
-
         const response = await fetch(`http://127.0.0.1:1337/media/${media}`, opts);
         const json = await response.json();
-
         if (response.status === 200 && json) {
             const length = json.length;
             return setRecommendation(json[randomInteger(0, length)]['title']);
         }
-
         setRecommendation(null);
+    }
+
+    async function makeRecommendation() {
+        if (!recommendation) return setRecommendation('Type here!!');
+        const opts: RequestInit = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ title: recommendation }),
+        };
+        const response = await fetch(`http://127.0.0.1:1337/media/${media}`, opts);
+        const json = await response.json();
+        if (response.status === 200 && json) {
+            return setRecommendation("Thanks, I'll check it out!");
+        }
+        setRecommendation('Ran into an error ):');
     }
 
     return (
@@ -186,15 +195,20 @@ function UnstyledFooter({ className, setTheme }: PropTypes) {
                     </Button>
                 </Container>
                 <Container containerStyle={styles.recommendationContainer.container}>
-                    <Button buttonStyle={styles.recommendationContainer.button} onButtonClick={() => getRecommendation('GET')}>
+                    <Button buttonStyle={styles.recommendationContainer.button} onButtonClick={() => getRecommendation()}>
                         Get a Recommendation
                     </Button>
-                    <Button buttonStyle={styles.recommendationContainer.button} onButtonClick={() => getRecommendation('POST')}>
+                    <Button buttonStyle={styles.recommendationContainer.button} onButtonClick={() => makeRecommendation()}>
                         Give a Recommendation
                     </Button>
                 </Container>
                 <Container containerStyle={styles.recommendationInput.container}>
-                    <input defaultValue={recommendation ?? ''} placeholder='Type a Recommendation' style={styles.recommendationInput.input} />
+                    <input
+                        style={styles.recommendationInput.input}
+                        placeholder='Type a Recommendation'
+                        value={recommendation || ''}
+                        onChange={handleInput}
+                    />
                 </Container>
             </Modal>
         </Container>
