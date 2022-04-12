@@ -1,21 +1,31 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
+export interface MovieInput {
+    title: string;
+    ranking: number;
+}
 export interface MovieDocument extends mongoose.Document {
     title: string;
-    ranking: number
-};
+    ranking: number;
+}
 
-const movieSchema = new mongoose.Schema({
-    title: {
-        type: String,
-        required: true
+const movieSchema = new mongoose.Schema(
+    {
+        title: {
+            type: String,
+            required: true
+        },
+        ranking: {
+            type: Number,
+            required: true,
+            unique: true
+        }
     },
-    ranking: {
-        type: Number,
-        required: true
+    {
+        timestamps: true
     }
-});
+);
 
-const MovieModel = mongoose.model('Movie', movieSchema);
+const MovieModel = mongoose.model<MovieDocument>("Movie", movieSchema);
 
 export default MovieModel;

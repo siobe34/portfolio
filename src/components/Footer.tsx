@@ -35,9 +35,12 @@ function UnstyledFooter({ className, setTheme }: PropTypes) {
         const response = await fetch(`http://127.0.0.1:1337/media/${mediaType}`, opts);
         const json = await response.json();
 
-        if (response.status !== 200) setRecommendation(null);
-        const length = json.length;
-        setRecommendation(json[randomInteger(0, length)]);
+        if (response.status === 200 && json) {
+            const length = json.length;
+            return setRecommendation(json[randomInteger(0, length)]['title']);
+        }
+
+        setRecommendation(null);
     }
 
     return (

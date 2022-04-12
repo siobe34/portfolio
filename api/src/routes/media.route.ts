@@ -6,6 +6,6 @@ const router = express.Router();
 
 router.get('/movies', movieController.handleMovieQuery);
 
-router.post('/:mediaType', movieController.handleMovieCreation);
+router.post('/movies', movieController.handleMovieCreation);
 
 export default router;
