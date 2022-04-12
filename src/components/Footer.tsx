@@ -45,7 +45,7 @@ function UnstyledFooter({ className, setTheme }: PropTypes) {
 
     return (
         <Container className={`footer ${className}`} containerStyle={{ justifyContent: 'space-between' }}>
-            <Button onButtonClick={() => setModalState(!modalState)} className='rainbow'>
+            <Button onButtonClick={() => setModalState(!modalState)} buttonStyle={{ color: 'red' }}>
                 <FontAwesomeIcon icon={faHeart} />
             </Button>
             <a href='https://github.com/siobe34' className='footer-txt'>
@@ -54,6 +54,7 @@ function UnstyledFooter({ className, setTheme }: PropTypes) {
             <Button
                 className='footer-txt'
                 buttonStyle={{ margin: '0 0.5% 0 0' }}
+                buttonHoverStyle={{ margin: '0 0.5% 0 0' }}
                 onButtonClick={() => setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'))}
             >
                 Switch to {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
@@ -142,44 +143,5 @@ export const Footer = styled(UnstyledFooter)`
     & .star-right {
         transform: rotateY(180deg);
         transition: all 0.5s ease-out;
-    }
-
-    @keyframes rainbow {
-        0% {
-            color: white;
-        }
-        10% {
-            color: lightblue;
-        }
-        20% {
-            color: orange;
-        }
-        30% {
-            color: lightgreen;
-        }
-        40% {
-            color: red;
-        }
-        50% {
-            color: lightpurple;
-        }
-        60% {
-            color: yellow;
-        }
-        70% {
-            color: pink;
-        }
-        80% {
-            color: palegreen;
-        }
-        90% {
-            color: yellow;
-        }
-        100% {
-            color: lightgrey;
-        }
-    }
-    & .rainbow {
-        animation: rainbow 10s infinite ease-out;
     }
 `;

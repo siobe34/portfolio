@@ -4,7 +4,6 @@
         <path stroke="transparent" d='M 30 0 l 30 30 -30 30 -30 -30 30 -30' />
         <path stroke="transparent" d='M 30 85 l 30 -30 0 30 -30 0' />
         <path stroke="transparent" d='M 30 85 l -30 -30 0 30 30 0' />
-
         <path stroke="transparent" d='M 0 256 l 60 0 0 -171 -60 0 0 171' />
         <path stroke="transparent" d='M 95 0 l 0 256 60 0 0 -256 -60 0' />
         <path stroke="transparent" d='M 155 0 C 306 15 266 145 155 160 l 0 -50 c 90 -40 0 -65 0 -60' />

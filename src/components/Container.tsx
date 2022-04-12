@@ -16,6 +16,7 @@ export const Container = styled(UnstyledContainer)`
     flex-direction: ${(props) => props.containerStyle?.flexDirection ?? 'row'};
     justify-content: ${(props) => props.containerStyle?.justifyContent ?? 'flex-start'};
     align-items: ${(props) => props.containerStyle?.alignItems ?? 'center'};
+    align-self: ${(props) => props.containerStyle?.alignSelf ?? 'revert'};
     gap: ${(props) => props.containerStyle?.gap ?? '0'};
     margin: ${(props) => props.containerStyle?.margin ?? '0'};
     padding: ${(props) => props.containerStyle?.padding ?? '0'};

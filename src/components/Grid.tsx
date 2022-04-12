@@ -7,8 +7,12 @@ type PropTypes = {
     childFlex?: string;
 };
 
-const UnstyledGrid = ({ className, children }: PropTypes) => {
-    return <div className={className}>{children}</div>;
+const UnstyledGrid = ({ className, children, gridStyle }: PropTypes) => {
+    return (
+        <div className={className} style={gridStyle}>
+            {children}
+        </div>
+    );
 };
 
 export const Grid = styled(UnstyledGrid)`

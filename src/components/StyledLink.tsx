@@ -7,5 +7,6 @@ export const StyledLink = styled(Link)`
 
     &:hover {
         border-bottom: 0.2rem solid var(--bg-primary-txt);
+        transition: all 100ms ease-out;
     }
 `;

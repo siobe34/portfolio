@@ -40,6 +40,9 @@ const styles = {
             width: 'calc(50% - .5rem)',
             whiteSpace: 'revert' as 'revert',
         },
+        buttonHover: {
+            color: 'white',
+        },
         header: {
             fontWeight: 'unset',
         },
@@ -77,6 +80,7 @@ function About() {
                 <Container containerStyle={styles.summaryButton.container}>
                     <Button
                         buttonStyle={{ ...styles.summaryButton.button, backgroundColor: '#842029', color: '#fff' }}
+                        buttonHoverStyle={styles.summaryButton.buttonHover}
                         onButtonClick={() => setTLDR(true)}
                     >
                         <Header headerType='h3'>Show me a Summary!</Header>

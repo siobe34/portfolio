@@ -8,6 +8,7 @@ import { StyledLink } from './StyledLink';
 import { Button } from './Button';
 import { List } from './List';
 import PageNotFound from '../pages/PageNotFound';
+import Home from '../pages/Home';
 import About from '../pages/About';
 import Projects from '../pages/Projects';
 import Technologies from '../pages/Technologies';
@@ -29,9 +30,14 @@ function UnstyledNavbar({ className }: PropTypes) {
         <>
             <nav className={`navbar ${className}`}>
                 <StyledLink to='/'>
-                    <img src={logo} alt='initials' height='30px' className='logo' style={{ filter: 'invert(1)' }} />
+                    <img src={logo} alt='initials' height='30px' className='logo' />
                 </StyledLink>
                 <List className={`navbar-menu ${mobileMenu ? 'active' : null}`}>
+                    <li>
+                        <StyledLink onClick={handleMenuClick} to='/'>
+                            Home
+                        </StyledLink>
+                    </li>
                     <li>
                         <StyledLink onClick={handleMenuClick} to='/about-me'>
                             About Me
@@ -58,7 +64,7 @@ function UnstyledNavbar({ className }: PropTypes) {
                 </Button>
             </nav>
             <Routes>
-                <Route path='/' element={<About />} />
+                <Route path='/' element={<Home />} />
                 <Route path='/about-me' element={<About />} />
                 <Route path='/projects' element={<Projects />} />
                 <Route path='/technical-skills' element={<Technologies />} />
@@ -107,6 +113,12 @@ export const Navbar = styled(UnstyledNavbar)`
         left: 0%;
         transition: left 250ms ease;
     }
+    & > :hover,
+    .logo:hover {
+        opacity: 0.75;
+        border: none;
+        transition: opacity 150ms ease-out;
+    }
 
     /* Desktop Styles */
     @media all and (min-width: 720px) {
@@ -133,11 +145,5 @@ export const Navbar = styled(UnstyledNavbar)`
 
     & a {
         color: var(--bg-primary-txt);
-    }
-
-    & > :hover,
-    .logo:hover {
-        opacity: 0.85;
-        border: none;
     }
 `;
