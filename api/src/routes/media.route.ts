@@ -1,11 +1,11 @@
-import express from 'express';
+import express from "express";
 
-import movieController from '../controllers/movie.controller';
+import movieController from "../controllers/movie.controller";
 
 const router = express.Router();
 
-router.get('/movies', movieController.handleMovieQuery);
+router.get("/movies", movieController.handleMovieQuery);
 
-router.post('/movies', movieController.handleMovieCreation);
+router.post("/movies", movieController.handleMovieCreation);
 
 export default router;
