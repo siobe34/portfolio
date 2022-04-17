@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart, faStarHalfStroke, faZap, faClapperboard, faTv, faMusic } from '@fortawesome/free-solid-svg-icons';
+import { faHeart, faStarHalfStroke, faZap, faClapperboard, faTv, faMusic, faBook } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import styled from 'styled-components';
 
@@ -192,6 +192,13 @@ function UnstyledFooter({ className, setTheme }: PropTypes) {
                     >
                         <FontAwesomeIcon icon={faMusic} />
                         Music
+                    </Button>
+                    <Button
+                        buttonStyle={media === 'books' ? styles.mediaButton.highlight : styles.mediaButton.regular}
+                        onButtonClick={() => setMedia('books')}
+                    >
+                        <FontAwesomeIcon icon={faBook} />
+                        Book
                     </Button>
                 </Container>
                 <Container containerStyle={styles.recommendationContainer.container}>
