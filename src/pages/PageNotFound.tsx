@@ -12,7 +12,7 @@ const styles = {
 
 function PageNotFound() {
     return (
-        <Container className='content' containerStyle={styles.contentContainer}>
+        <Container animate className='content' containerStyle={styles.contentContainer}>
             <Header headerType='h1'>404 Page Not Found</Header>
             <Header headerType='h3'>
                 Sorry it seems this link is broken or simply does not exist.

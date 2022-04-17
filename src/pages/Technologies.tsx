@@ -54,7 +54,7 @@ const styles = {
 
 function Technologies() {
     return (
-        <Container className='content' containerStyle={styles.contentContainer}>
+        <Container animate className='content' containerStyle={styles.contentContainer}>
             <Header headerType='h1'>Technical Skills</Header>
             <PageContent pageContentStyle={styles.pageContent} width='85vw' mobileWidth='90vw'>
                 <Grid gridStyle={styles.grid.parent}>

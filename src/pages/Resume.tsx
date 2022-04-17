@@ -17,7 +17,7 @@ const styles = {
 
 function Resume() {
     return (
-        <Container className='content' containerStyle={styles.contentContainer}>
+        <Container animate className='content' containerStyle={styles.contentContainer}>
             <Header headerType='h1'>Resume</Header>
             <PageContent>
                 <Button buttonStyle={styles.downloadButton}>Download PDF</Button>

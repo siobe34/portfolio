@@ -1,12 +1,21 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 type PropTypes = {
     children: React.ReactNode;
     className?: string;
     containerStyle?: React.CSSProperties;
+    animate?: boolean;
 };
 
-const UnstyledContainer = ({ className, children }: PropTypes) => {
+const UnstyledContainer = ({ className, children, animate }: PropTypes) => {
+    if (animate) {
+        return (
+            <motion.div className={className} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+                {children}
+            </motion.div>
+        );
+    }
     return <div className={className}>{children}</div>;
 };
 

@@ -77,7 +77,7 @@ function Home() {
     const theme = useContext(ThemeContext);
 
     return (
-        <Container className='content' containerStyle={styles.contentContainer}>
+        <Container animate className='content' containerStyle={styles.contentContainer}>
             <PageContent pageContentStyle={styles.pageContent}>
                 <Button buttonStyle={theme === 'dark' ? { ...styles.logo, filter: 'invert(1)' } : styles.logo}>
                     <img src={logo} alt='logo' style={{ height: 'inherit' }} />

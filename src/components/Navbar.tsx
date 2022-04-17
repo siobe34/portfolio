@@ -3,16 +3,9 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components';
 
 import { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
 import { StyledLink } from './StyledLink';
 import { Button } from './Button';
 import { List } from './List';
-import PageNotFound from '../pages/PageNotFound';
-import Home from '../pages/Home';
-import About from '../pages/About';
-import Projects from '../pages/Projects';
-import Technologies from '../pages/Technologies';
-import Resume from '../pages/Resume';
 import logo from '../assets/initials.svg';
 
 type PropTypes = {
@@ -63,14 +56,6 @@ function UnstyledNavbar({ className }: PropTypes) {
                     <FontAwesomeIcon icon={faBars} />
                 </Button>
             </nav>
-            <Routes>
-                <Route path='/' element={<Home />} />
-                <Route path='/about-me' element={<About />} />
-                <Route path='/projects' element={<Projects />} />
-                <Route path='/technical-skills' element={<Technologies />} />
-                <Route path='/resume' element={<Resume />} />
-                <Route path='*' element={<PageNotFound />} />
-            </Routes>
         </>
     );
 }

@@ -71,7 +71,7 @@ const styles = {
 
 function Projects() {
     return (
-        <Container className='content' containerStyle={styles.contentContainer}>
+        <Container animate className='content' containerStyle={styles.contentContainer}>
             <Header headerType='h1'>Projects</Header>
             <PageContent pageContentStyle={styles.pageContent}>
                 <Span spanStyle={styles.spanHighlight}>

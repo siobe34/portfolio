@@ -74,7 +74,7 @@ function About() {
     const [TLDR, setTLDR] = useState<boolean>(false);
 
     return (
-        <Container className='content' containerStyle={styles.contentContainer}>
+        <Container animate className='content' containerStyle={styles.contentContainer}>
             <Header headerType='h1'>About Me</Header>
             <PageContent>
                 <Container containerStyle={styles.summaryButton.container}>
