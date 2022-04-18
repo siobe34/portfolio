@@ -2,20 +2,23 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClose } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components';
 
+import { forwardRef, useState, useImperativeHandle } from 'react';
 import { Button } from './Button';
 
 type PropTypes = {
     children: React.ReactNode;
     className?: string;
-    modalState: boolean;
-    setModalState: React.Dispatch<React.SetStateAction<boolean>>;
     modalStyle?: React.CSSProperties;
 };
 
-const UnstyledModal = ({ className, children, modalState, setModalState }: PropTypes) => {
-    if (!modalState) {
-        return null;
-    }
+const UnstyledModal = forwardRef(({ className, children }: PropTypes, ref) => {
+    const [modalState, setModalState] = useState<boolean>(false);
+    useImperativeHandle(ref, () => ({
+        handleModalState() {
+            setModalState(true);
+        },
+    }));
+    if (!modalState) return null;
     return (
         <div className={className}>
             <div className='modal-content'>
@@ -26,7 +29,7 @@ const UnstyledModal = ({ className, children, modalState, setModalState }: PropT
             </div>
         </div>
     );
-};
+});
 
 export const Modal = styled(UnstyledModal)`
     position: fixed;

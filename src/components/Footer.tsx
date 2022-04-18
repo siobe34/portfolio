@@ -3,7 +3,7 @@ import { faHeart, faStarHalfStroke, faZap, faClapperboard, faTv, faMusic, faBook
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import styled from 'styled-components';
 
-import { useState, useContext } from 'react';
+import React, { useState, useContext, useRef } from 'react';
 import ThemeContext from './ThemeContext';
 import { Container } from './Container';
 import { Span } from './Span';
@@ -66,7 +66,7 @@ const styles = {
 function UnstyledFooter({ className, setTheme }: PropTypes) {
     const theme = useContext(ThemeContext);
 
-    const [modalState, setModalState] = useState<boolean>(false);
+    const modalRef = useRef<React.ElementRef<typeof Modal>>(null);
     const [media, setMedia] = useState<string | null>(null);
     const [recommendation, setRecommendation] = useState<string | null>(null);
     const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => setRecommendation(e.target.value);
@@ -113,7 +113,8 @@ function UnstyledFooter({ className, setTheme }: PropTypes) {
                 onButtonClick={() => {
                     setMedia(null);
                     setRecommendation(null);
-                    setModalState(!modalState);
+                    // @ts-ignore
+                    modalRef.current?.handleModalState();
                 }}
                 buttonStyle={{ color: 'red' }}
             >
@@ -131,7 +132,7 @@ function UnstyledFooter({ className, setTheme }: PropTypes) {
                 Switch to {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
                 <FontAwesomeIcon icon={faStarHalfStroke} className={theme === 'dark' ? 'star-left' : 'star-right'} style={{ marginLeft: '5px' }} />
             </Button>
-            <Modal modalState={modalState} setModalState={setModalState} modalStyle={{ height: 'fit-content' }}>
+            <Modal ref={modalRef} modalStyle={{ height: 'fit-content' }}>
                 <Header headerType='h1'>Media Recommendations</Header>
                 <Container
                     containerStyle={{
