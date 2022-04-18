@@ -1,8 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLongArrowRight } from '@fortawesome/free-solid-svg-icons';
 
-import { useContext } from 'react';
-import ThemeContext from '../components/ThemeContext';
 import { Container } from '../components/Container';
 import { PageContent } from '../components/PageContent';
 import { Grid } from '../components/Grid';
@@ -13,7 +11,7 @@ import imgAbout from '../assets/aboutme.svg';
 import imgProjects from '../assets/projects.svg';
 import imgTech from '../assets/techstack.svg';
 import imgResume from '../assets/resume.svg';
-import logo from '../assets/initials.svg';
+import { Logo } from '../components/Logo';
 
 const styles = {
     contentContainer: {
@@ -74,14 +72,10 @@ const styles = {
 };
 
 function Home() {
-    const theme = useContext(ThemeContext);
-
     return (
         <Container animate className='content' containerStyle={styles.contentContainer}>
             <PageContent pageContentStyle={styles.pageContent}>
-                <Button buttonStyle={theme === 'dark' ? { ...styles.logo, filter: 'invert(1)' } : styles.logo}>
-                    <img src={logo} alt='logo' style={{ height: 'inherit' }} />
-                </Button>
+                <Logo logoStyle={{ display: 'flex', alignSelf: 'center' }} />
                 <Header headerType='h2' headerStyle={styles.header.name}>
                     Ibad Rashid
                 </Header>
