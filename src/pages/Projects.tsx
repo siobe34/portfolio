@@ -82,12 +82,11 @@ function Projects() {
                 <Grid gridStyle={styles.grid}>
                     <Card cardStyle={styles.card.container}>
                         <Header headerType='h3' headerStyle={styles.card.header}>
-                            Finance Manager
+                            Ledger
                         </Header>
-                        <code style={{ color: 'red' }}>Come up with a better name!!</code>
                         <p style={styles.text}>
                             A tool to manage your budget on a transactional level with helpful charts to see historical net worth, monthly categorical
-                            spending, and search the database in a with a user-friendly interface.
+                            spending, and search personal transactions with a user-friendly interface.
                         </p>
                         <Button buttonStyle={styles.card.button}>Explore Working Demo</Button>
                         <Container containerStyle={styles.buttonContainer.container}>
