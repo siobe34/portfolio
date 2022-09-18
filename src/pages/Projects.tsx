@@ -136,13 +136,16 @@ function Projects() {
                     </Card>
                     <Card cardStyle={styles.card.container}>
                         <Header headerType='h3' headerStyle={styles.card.header}>
-                            Reddit's Favourite NBA Player
+                            10K Chess
                         </Header>
-                        <p style={styles.text}>An algorithm using sentiment analysis to determine r/NBA's favourite and least-favourite players.</p>
-                        <Button buttonStyle={styles.card.button}>View Results</Button>
+                        <p style={styles.text}>A tool to practice chess puzzles using the public Lichess API.</p>
+                        <Button buttonStyle={styles.card.button}>Try it out</Button>
                         <Container containerStyle={styles.buttonContainer.container}>
-                            <Button buttonStyle={{ ...styles.buttonContainer.buttons.dark, backgroundColor: '#414bb2' }}>Python</Button>
-                            <Button buttonStyle={{ ...styles.buttonContainer.buttons.dark, backgroundColor: '#414bb2' }}>Jupyter Notebook</Button>
+                            <Button buttonStyle={{ ...styles.buttonContainer.buttons.light, backgroundColor: '#f7e018' }}>JavaScript</Button>
+                            <Button buttonStyle={{ ...styles.buttonContainer.buttons.light, backgroundColor: '#2d79c7' }}>TypeScript</Button>
+                            <Button buttonStyle={{ ...styles.buttonContainer.buttons.light, backgroundColor: '#61dafb' }}>React</Button>
+                            <Button buttonStyle={{ ...styles.buttonContainer.buttons.light, backgroundColor: '#38bdf8' }}>Tailwind</Button>
+                            <Button buttonStyle={{ ...styles.buttonContainer.buttons.light, backgroundColor: '#009981' }}>Chess.js</Button>
                         </Container>
                     </Card>
                 </Grid>
