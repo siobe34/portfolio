@@ -138,7 +138,7 @@ function Projects() {
                         <Header headerType='h3' headerStyle={styles.card.header}>
                             10K Chess
                         </Header>
-                        <p style={styles.text}>A tool to practice chess puzzles using the public Lichess API.</p>
+                        <p style={styles.text}>A tool to practice chess puzzles taken from the public Lichess API.</p>
                         <Button buttonStyle={styles.card.button}>Try it out</Button>
                         <Container containerStyle={styles.buttonContainer.container}>
                             <Button buttonStyle={{ ...styles.buttonContainer.buttons.light, backgroundColor: '#f7e018' }}>JavaScript</Button>
