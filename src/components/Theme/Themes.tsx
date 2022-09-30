@@ -13,6 +13,18 @@ export const themes = {
     },
     dark: {
         current: "dark",
+        bgEl1: "#131a17",
+        bgEl2: "#1e2b25",
+        bgEl3: "#2b2f2d",
+        txtonBg: "#FAFAFA",
+        primary: "rgba(13, 180, 106, 0.55)",
+        secondary: "#3f9c9b",
+        txtonPrim: "#fff",
+        txtonSec: "#fff",
+        divider: "#374525",
+    },
+    darkPurple: {
+        current: "dark",
         bgEl1: "#2C1D3D",
         bgEl2: "#35244C",
         bgEl3: "#392850",
