@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg version="1.1" width="256px" height="256px" viewBox="0 0 256 256"
+    xmlns="http://www.w3.org/2000/svg">
+    <g>
+        <path stroke="white" fill="white" d='M 3 253 l 0 -180 50 0 0 180 -50 0' />
+        <path stroke="white" fill="white" d='M 28 3 l 25 25 -25 25 -25 -25 25 -25' />
+        <path stroke="white" fill="white" d='M 150 3 C 256 0 290 145 150 150' />
+        <path stroke="white" fill="white" d='M 100 253 l 50 0 0 -250 -50 0 0 250' />
+        <path stroke="white" fill="white" d='M 228 253 l 25 0 0 -25 -103 -103 0 50 78 78' />
+    </g>
+</svg>

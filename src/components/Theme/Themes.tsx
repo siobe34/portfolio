@@ -1,0 +1,26 @@
+export const themes = {
+    light: {
+        current: "light",
+        bgEl1: "#F4F4FA",
+        bgEl2: "#FFFFFF",
+        bgEl3: "#FAFAFA",
+        txtonBg: "#000",
+        primary: "#AE00FF",
+        secondary: "#54BAB9",
+        txtonPrim: "#fff",
+        txtonSec: "#fff",
+        divider: "#ECECF3",
+    },
+    dark: {
+        current: "dark",
+        bgEl1: "#2C1D3D",
+        bgEl2: "#35244C",
+        bgEl3: "#392850",
+        txtonBg: "#FAFAFA",
+        primary: "rgba(174, 0, 255, 0.55)",
+        secondary: "rgba(84, 186, 185, 0.85)",
+        txtonPrim: "#fff",
+        txtonSec: "#fff",
+        divider: "#332545",
+    },
+};

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg version="1.1" width="256px" height="256px" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+    <g>
+        <path stroke="transparent" d='M 30 0 l 30 30 -30 30 -30 -30 30 -30' />
+        <path stroke="transparent" d='M 30 85 l 30 -30 0 30 -30 0' />
+        <path stroke="transparent" d='M 30 85 l -30 -30 0 30 30 0' />
+        <path stroke="transparent" d='M 0 256 l 60 0 0 -171 -60 0 0 171' />
+        <path stroke="transparent" d='M 95 0 l 0 256 60 0 0 -256 -60 0' />
+        <path stroke="transparent" d='M 155 0 C 306 15 266 145 155 160 l 0 -50 c 90 -40 0 -65 0 -60' />
+        <path stroke="transparent" d='M 211 256 l -150 -138 45 -45 L 256 211 l 0 45 -45 0' />
+    </g>
+</svg>
