@@ -84,7 +84,7 @@ const brandButtons: { [key: string]: { name: string; color: string; backgroundCo
 const ledger = ["javascript", "typescript", "react", "nodejs", "mongodb", "nginx", "aws"];
 const fibreManagement = ["javascript", "typescript", "react", "python", "flask", "mysql", "mariadb", "nginx"];
 const tenkchess = ["javascript", "typescript", "react", "tailwind", "chessjs", "vercel"];
-const portfolio = ["javascript", "typescript", "react", "github"];
+const portfolio = ["javascript", "typescript", "react", "vercel"];
 
 function Projects() {
     return (
@@ -120,7 +120,7 @@ function Projects() {
                         A tool to manage your budget on a transactional level with helpful charts to see historical net worth, monthly categorical
                         spending, and search personal transactions with a user-friendly interface.
                     </p>
-                    <Button className='text-xl font-bold'>Explore Working Demo</Button>
+                    <Button className='text-xl font-bold'>Under Development</Button>
                     <div className='flex flex-wrap gap-2'>
                         {ledger.map((brand) => {
                             return (
@@ -141,7 +141,7 @@ function Projects() {
                         Uses Google Maps JS API to display various relationally linked geospatial entities on a map interface, complete with
                         user-friendly database management, and user management.
                     </p>
-                    <Button className='text-xl font-bold'>View Demo</Button>
+                    <Button className='text-xl font-bold'>Under Development</Button>
                     <div className='flex flex-wrap gap-2'>
                         {fibreManagement.map((brand) => {
                             return (
