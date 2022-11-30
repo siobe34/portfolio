@@ -11,7 +11,7 @@ const StyledMain = styled.main`
         "content";
     margin: 0;
     padding: 0;
-    font-family: "Montserrat";
+    font-family: "Source Code Pro";
     background-color: ${(props) => props.theme.bgEl1};
 `;
 
