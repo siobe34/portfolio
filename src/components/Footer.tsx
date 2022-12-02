@@ -27,7 +27,7 @@ const StyledFooter = styled.div`
 
 export const Footer = () => {
     return (
-        <StyledFooter className='flex justify-center py-16 w-full mt-auto'>
+        <StyledFooter className='flex justify-center py-12 w-full mt-auto'>
             <NavLinks className='override-navlinks-footer'>
                 <ListItem>
                     <LinkCustom to={SITE_ROUTES[0].path} animatedLink>

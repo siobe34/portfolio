@@ -13,7 +13,7 @@ export const ThemeToggler = () => {
     return (
         <motion.button
             whileTap={{ rotateY: "180deg" }}
-            className='text-2xl outline-none md:absolute md:top-0 md:right-0 md:m-4'
+            className='text-2xl outline-none md:absolute md:top-0 md:right-0 md:mr-8 md:h-full'
             onClick={() => setTheme!((prevState: ITheme["theme"]) => (prevState === "light" ? "dark" : "light"))}
         >
             <FontIcon icon={theme === "light" ? faSun : faMoon} highlight />
