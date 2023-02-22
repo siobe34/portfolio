@@ -143,7 +143,7 @@ function Projects() {
                         Landmarks is a world map of various points of interest with a brief description about each landmark. It's an interactive way
                         to learn about interesting geography, weird archeological facts, random history, and anything I find interesting.
                     </p>
-                    <Button className='text-xl font-bold' onClick={() => window.location.replace("https://landmarks.kjir.net")}>
+                    <Button className='text-xl font-bold' onClick={() => window.location.replace("https://landmarkss.vercel.app")}>
                         Check out the map
                     </Button>
                     <div className='flex flex-wrap gap-2 justify-center'>
