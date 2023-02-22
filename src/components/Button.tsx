@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 import { IButton } from "../types/IButton";
@@ -16,11 +17,21 @@ const StyledButton = styled.button`
     }
 `;
 
-export const Button = ({ className, children, onClick }: IButton) => {
+export const Button = ({ className, children, onClick, href }: IButton) => {
+    const navigate = useNavigate();
+    if (!href)
+        return (
+            <StyledButton
+                className={`${className} inline-flex justify-center items-center m-0 py-2 px-4 border-0 rounded text-base cursor-pointer`}
+                onClick={onClick}
+            >
+                {children}
+            </StyledButton>
+        );
     return (
         <StyledButton
             className={`${className} inline-flex justify-center items-center m-0 py-2 px-4 border-0 rounded text-base cursor-pointer`}
-            onClick={onClick}
+            onClick={() => navigate(href)}
         >
             {children}
         </StyledButton>
