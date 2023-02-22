@@ -64,9 +64,9 @@ export const Navbar = ({ className }: INavbar) => {
     }, [location]);
 
     return (
-        <StyledNavbar className={`relative flex justify-between items-center gap-4 w-full ${className}`}>
+        <StyledNavbar className={`relative flex justify-between items-center md:py-0 py-4 gap-4 w-full ${className}`}>
             <LinkCustom to='/' className='flex justify-center items-center ml-8 h-full text-3xl'>
-                <Logo className='h-2/5' />
+                <Logo className='h-8' />
             </LinkCustom>
             <ThemeToggler />
             <NavLinks className={`nav-links ${menuActive && "active"}`} />
