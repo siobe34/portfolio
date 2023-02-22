@@ -28,17 +28,13 @@ const StyledAnimatedLink = styled(Link)`
 export const LinkCustom = ({ className, children, to, onClick, animatedLink }: ILinkCustom) => {
     if (!animatedLink)
         return (
-            <StyledLink className={`flex justify-center items-center text-inherit hover:underline ${className}`} to={to} onClick={onClick}>
+            <StyledLink className={`flex justify-center items-center text-inherit ${className}`} to={to} onClick={onClick}>
                 {children}
             </StyledLink>
         );
 
     return (
-        <StyledAnimatedLink
-            className={`flex flex-col justify-center items-center text-inherit hover:underline ${className}`}
-            to={to}
-            onClick={onClick}
-        >
+        <StyledAnimatedLink className={`flex flex-col justify-center items-center text-inherit ${className}`} to={to} onClick={onClick}>
             {children}
             <div className='link-hover' />
         </StyledAnimatedLink>
