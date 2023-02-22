@@ -19,6 +19,11 @@ const brandButtons: { [key: string]: { name: string; color: string; backgroundCo
         color: "#000",
         backgroundColor: "#61dafb",
     },
+    nextjs: {
+        name: "Next JS",
+        color: "#fff",
+        backgroundColor: "#000",
+    },
     nodejs: {
         name: "Node JS",
         color: "#000",
@@ -74,6 +79,21 @@ const brandButtons: { [key: string]: { name: string; color: string; backgroundCo
         color: "#fff",
         backgroundColor: "#009981",
     },
+    styled: {
+        name: "Styled Components",
+        color: "#fff",
+        backgroundColor: "#ff69b4",
+    },
+    google: {
+        name: "Google Maps",
+        color: "#fff",
+        backgroundColor: "#00b757",
+    },
+    reactrouter: {
+        name: "React Router",
+        color: "#fff",
+        backgroundColor: "#ff0000",
+    },
     vercel: {
         name: "Vercel",
         color: "#fff",
@@ -81,10 +101,10 @@ const brandButtons: { [key: string]: { name: string; color: string; backgroundCo
     },
 };
 
-const ledger = ["javascript", "typescript", "react", "nodejs", "mongodb", "nginx", "aws"];
-const fibreManagement = ["javascript", "typescript", "react", "python", "flask", "mysql", "mariadb", "nginx"];
+const ledger = ["javascript", "typescript", "react", "nextjs", "tailwind", "mongodb", "vercel"];
+const landmarks = ["javascript", "typescript", "react", "nextjs", "mongodb", "tailwind", "google", "vercel"];
 const tenkchess = ["javascript", "typescript", "react", "tailwind", "chessjs", "vercel"];
-const portfolio = ["javascript", "typescript", "react", "vercel"];
+const portfolio = ["javascript", "typescript", "react", "styled", "reactrouter", "vercel"];
 
 function Projects() {
     return (
@@ -95,33 +115,15 @@ function Projects() {
             </span>
             <div className='flex flex-col gap-8 w-4/5 mb-8'>
                 <Card className='flex-col gap-4 p-16'>
-                    <h3 className='underline leading-loose'>10K Chess</h3>
-                    <p className='leading-relaxed'>A tool to practice chess puzzles taken from the public Lichess API.</p>
-                    <Button className='text-xl font-bold'>
-                        <a href='https://10kchess.vercel.app/'>Try it out</a>
-                    </Button>
-                    <div className='flex flex-wrap gap-2'>
-                        {tenkchess.map((brand) => {
-                            return (
-                                <button
-                                    key={brand}
-                                    className={brandButtonClass}
-                                    style={{ color: brandButtons[brand].color, backgroundColor: brandButtons[brand].backgroundColor }}
-                                >
-                                    {brandButtons[brand].name}
-                                </button>
-                            );
-                        })}
-                    </div>
-                </Card>
-                <Card className='flex-col gap-4 p-16'>
                     <h3 className='underline leading-loose'>Ledger</h3>
                     <p className='leading-relaxed'>
                         A tool to manage your budget on a transactional level with helpful charts to see historical net worth, monthly categorical
                         spending, and search personal transactions with a user-friendly interface.
                     </p>
-                    <Button className='text-xl font-bold'>Under Development</Button>
-                    <div className='flex flex-wrap gap-2'>
+                    <Button className='text-xl font-bold' onClick={() => window.location.replace("https://ledgerr.vercel.app/auth")}>
+                        View the demo
+                    </Button>
+                    <div className='flex flex-wrap gap-2 justify-center'>
                         {ledger.map((brand) => {
                             return (
                                 <button
@@ -136,14 +138,16 @@ function Projects() {
                     </div>
                 </Card>
                 <Card className='flex-col gap-4 p-16'>
-                    <h3 className='underline leading-loose'>Fibre Management</h3>
+                    <h3 className='underline leading-loose'>Landmarks</h3>
                     <p className='leading-relaxed'>
-                        Uses Google Maps JS API to display various relationally linked geospatial entities on a map interface, complete with
-                        user-friendly database management, and user management.
+                        Landmarks is a world map of various points of interest with a brief description about each landmark. It's an interactive way
+                        to learn about interesting geography, weird archeological facts, random history, and anything I find interesting.
                     </p>
-                    <Button className='text-xl font-bold'>Under Development</Button>
-                    <div className='flex flex-wrap gap-2'>
-                        {fibreManagement.map((brand) => {
+                    <Button className='text-xl font-bold' onClick={() => window.location.replace("https://landmarks.kjir.net")}>
+                        Check out the map
+                    </Button>
+                    <div className='flex flex-wrap gap-2 justify-center'>
+                        {landmarks.map((brand) => {
                             return (
                                 <button
                                     key={brand}
@@ -157,12 +161,35 @@ function Projects() {
                     </div>
                 </Card>
                 <Card className='flex-col gap-4 p-16'>
-                    <h3 className='underline leading-loose'>Portfolio Website</h3>
-                    <p className='leading-relaxed'>My portfolio/resume for potential employers to gauge my skills as a web developer.</p>
-                    <Button className='text-xl font-bold'>
-                        <a href='https://github.com/siobe34/portfolio'>View the source code</a>
+                    <h3 className='underline leading-loose'>10K Chess</h3>
+                    <p className='leading-relaxed'>
+                        Practice chess puzzles taken from the public Lichess API. The idea is that memorizing positions from games played by humans
+                        improves intuition in your own games.
+                    </p>
+                    <Button className='text-xl font-bold' onClick={() => window.location.replace("https://10kchess.vercel.app")}>
+                        Try it out
                     </Button>
-                    <div className='flex flex-wrap gap-2'>
+                    <div className='flex flex-wrap gap-2 justify-center'>
+                        {tenkchess.map((brand) => {
+                            return (
+                                <button
+                                    key={brand}
+                                    className={brandButtonClass}
+                                    style={{ color: brandButtons[brand].color, backgroundColor: brandButtons[brand].backgroundColor }}
+                                >
+                                    {brandButtons[brand].name}
+                                </button>
+                            );
+                        })}
+                    </div>
+                </Card>
+
+                <Card className='flex-col gap-4 p-16'>
+                    <h3 className='underline leading-loose'>Portfolio Website</h3>
+                    <Button className='text-xl font-bold' onClick={() => window.location.replace("https://github.com/siobe34/portfolio")}>
+                        View the source code
+                    </Button>
+                    <div className='flex flex-wrap gap-2 justify-center'>
                         {portfolio.map((brand) => {
                             return (
                                 <button
