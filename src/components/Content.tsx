@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 import { IContent } from "../types/IContent";
 
-const StyledContent = styled(motion.div)`
+const StyledContent = styled(motion.main)`
     color: ${(props) => props.theme.txtonBg};
     background-color: ${(props) => props.theme.bgEl1};
 `;

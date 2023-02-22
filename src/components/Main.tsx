@@ -2,13 +2,15 @@ import styled from "styled-components";
 
 import { IMain } from "../types/IMain";
 
-const StyledMain = styled.main`
+const StyledMain = styled.div`
     display: grid;
-    grid-template-rows: minmax(40px, 10vh) 90vh;
-    grid-template-columns: minmax(0, 1fr);
+    min-height: 100vh;
+    min-height: 100dvh;
     grid-template-areas:
         "navbar"
-        "content";
+        "content"
+        "footer";
+    grid-template-rows: auto 1fr auto;
     margin: 0;
     padding: 0;
     font-family: "Source Code Pro";
