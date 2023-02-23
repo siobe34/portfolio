@@ -1,4 +1,4 @@
-import { Button } from "../components/Button";
+import { LinkButton } from "../components/LinkButton";
 import { Card } from "../components/Card";
 
 const brandButtonClass = "inline-flex justify-center items-center m-0 py-2 px-4 border-0 rounded cursor-default hover:opacity-80";
@@ -120,9 +120,9 @@ function Projects() {
                         A tool to manage your budget on a transactional level with helpful charts to see historical net worth, monthly categorical
                         spending, and search personal transactions with a user-friendly interface.
                     </p>
-                    <Button className='text-xl font-bold' onClick={() => window.location.replace("https://ledgerr.vercel.app/auth")}>
+                    <LinkButton className='text-xl font-bold' href='https://ledgerr.vercel.app/auth' external>
                         View the demo
-                    </Button>
+                    </LinkButton>
                     <div className='flex flex-wrap gap-2 justify-center'>
                         {ledger.map((brand) => {
                             return (
@@ -143,9 +143,9 @@ function Projects() {
                         Landmarks is a world map of various points of interest with a brief description about each landmark. It's an interactive way
                         to learn about interesting geography, weird archeological facts, random history, and anything I find interesting.
                     </p>
-                    <Button className='text-xl font-bold' onClick={() => window.location.replace("https://landmarkss.vercel.app")}>
+                    <LinkButton className='text-xl font-bold' href='https://landmarkss.vercel.app' external>
                         Check out the map
-                    </Button>
+                    </LinkButton>
                     <div className='flex flex-wrap gap-2 justify-center'>
                         {landmarks.map((brand) => {
                             return (
@@ -166,9 +166,9 @@ function Projects() {
                         Practice chess puzzles taken from the public Lichess API. The idea is that memorizing positions from games played by humans
                         improves intuition in your own games.
                     </p>
-                    <Button className='text-xl font-bold' onClick={() => window.location.replace("https://10kchess.vercel.app")}>
+                    <LinkButton className='text-xl font-bold' href='https://10kchess.vercel.app' external>
                         Try it out
-                    </Button>
+                    </LinkButton>
                     <div className='flex flex-wrap gap-2 justify-center'>
                         {tenkchess.map((brand) => {
                             return (
@@ -186,9 +186,9 @@ function Projects() {
 
                 <Card className='flex-col gap-4 p-16'>
                     <h3 className='underline leading-loose'>Portfolio Website</h3>
-                    <Button className='text-xl font-bold' onClick={() => window.location.replace("https://github.com/siobe34/portfolio")}>
+                    <LinkButton className='text-xl font-bold' href='https://github.com/siobe34/portfolio' external>
                         View the source code
-                    </Button>
+                    </LinkButton>
                     <div className='flex flex-wrap gap-2 justify-center'>
                         {portfolio.map((brand) => {
                             return (
