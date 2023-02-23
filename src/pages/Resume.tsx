@@ -14,7 +14,7 @@ function Resume() {
     return (
         <>
             <h1 className='my-8'>Resume</h1>
-            <Card className='flex-col gap-8 p-16'>
+            <Card className='flex-col gap-8 p-16 mb-16'>
                 <Button>
                     <a href={resumeFile}>View in Browser</a>
                 </Button>
