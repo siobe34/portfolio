@@ -126,13 +126,13 @@ function Projects() {
                     <div className='flex flex-wrap gap-2 justify-center'>
                         {ledger.map((brand) => {
                             return (
-                                <button
+                                <span
                                     key={brand}
                                     className={brandButtonClass}
                                     style={{ color: brandButtons[brand].color, backgroundColor: brandButtons[brand].backgroundColor }}
                                 >
                                     {brandButtons[brand].name}
-                                </button>
+                                </span>
                             );
                         })}
                     </div>
@@ -149,13 +149,13 @@ function Projects() {
                     <div className='flex flex-wrap gap-2 justify-center'>
                         {landmarks.map((brand) => {
                             return (
-                                <button
+                                <span
                                     key={brand}
                                     className={brandButtonClass}
                                     style={{ color: brandButtons[brand].color, backgroundColor: brandButtons[brand].backgroundColor }}
                                 >
                                     {brandButtons[brand].name}
-                                </button>
+                                </span>
                             );
                         })}
                     </div>
@@ -172,13 +172,13 @@ function Projects() {
                     <div className='flex flex-wrap gap-2 justify-center'>
                         {tenkchess.map((brand) => {
                             return (
-                                <button
+                                <span
                                     key={brand}
                                     className={brandButtonClass}
                                     style={{ color: brandButtons[brand].color, backgroundColor: brandButtons[brand].backgroundColor }}
                                 >
                                     {brandButtons[brand].name}
-                                </button>
+                                </span>
                             );
                         })}
                     </div>
@@ -192,13 +192,13 @@ function Projects() {
                     <div className='flex flex-wrap gap-2 justify-center'>
                         {portfolio.map((brand) => {
                             return (
-                                <button
+                                <span
                                     key={brand}
                                     className={brandButtonClass}
                                     style={{ color: brandButtons[brand].color, backgroundColor: brandButtons[brand].backgroundColor }}
                                 >
                                     {brandButtons[brand].name}
-                                </button>
+                                </span>
                             );
                         })}
                     </div>
