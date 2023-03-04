@@ -99,11 +99,32 @@ const brandButtons: { [key: string]: { name: string; color: string; backgroundCo
         color: "#fff",
         backgroundColor: "#000",
     },
+    dart: {
+        name: "Dart",
+        color: "#fff",
+        backgroundColor: "#00499F",
+    },
+    flutter: {
+        name: "Flutter",
+        color: "#000",
+        backgroundColor: "#00C0FD",
+    },
+    material: {
+        name: "Material UI",
+        color: "#fff",
+        backgroundColor: "#007FFF",
+    },
+    android: {
+        name: "Android Studio",
+        color: "#000",
+        backgroundColor: "#3ddc84",
+    },
 };
 
 const ledger = ["javascript", "typescript", "react", "nextjs", "tailwind", "mongodb", "vercel"];
 const landmarks = ["javascript", "typescript", "react", "nextjs", "mongodb", "tailwind", "google", "vercel"];
 const tenkchess = ["javascript", "typescript", "react", "tailwind", "chessjs", "vercel"];
+const to_do = ["flutter", "dart", "material", "android"];
 const portfolio = ["javascript", "typescript", "react", "styled", "reactrouter", "vercel"];
 
 function Projects() {
@@ -183,7 +204,29 @@ function Projects() {
                         })}
                     </div>
                 </Card>
-
+                <Card className='flex-col gap-4 p-16'>
+                    <h3 className='underline leading-loose'>To-do Mobile Application</h3>
+                    <p className='leading-relaxed'>
+                        A minimal mobile app made with Flutter. Add To-do Items on the main page with the option to mark Items as complete, delete
+                        them, or move them to Archives. Very barebones app intended to learn Flutter basics.
+                    </p>
+                    <LinkButton className='text-xl font-bold' href='https://github.com/siobe34/todo-flutter' external>
+                        Source code
+                    </LinkButton>
+                    <div className='flex flex-wrap gap-2 justify-center'>
+                        {to_do.map((brand) => {
+                            return (
+                                <span
+                                    key={brand}
+                                    className={brandButtonClass}
+                                    style={{ color: brandButtons[brand].color, backgroundColor: brandButtons[brand].backgroundColor }}
+                                >
+                                    {brandButtons[brand].name}
+                                </span>
+                            );
+                        })}
+                    </div>
+                </Card>
                 <Card className='flex-col gap-4 p-16'>
                     <h3 className='underline leading-loose'>Portfolio Website</h3>
                     <LinkButton className='text-xl font-bold' href='https://github.com/siobe34/portfolio' external>
